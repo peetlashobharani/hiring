@@ -13,7 +13,7 @@ pipeline {
         stage('Docker Build') {
             steps {
                 
-                sh "docker build -t peetla/hiring:0.0.2 /var/lib/jenkins/workspace/docker-ci-cd"
+                sh "docker build -t 9100246253/newone /var/lib/jenkins/workspace/docker-ci-cd"
             }
         }
         stage('Docker Push') {
