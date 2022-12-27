@@ -16,11 +16,14 @@ pipeline {
                 sh "docker build -t peetla/hiring:0.0.2 ."
             }
         }
-        stage('Docker Push') {
+       stage('Docker Push') {
             steps {
-                sh "docker login -u peetla-p xxxxxxx"
-                sh "docker push peetla/hiring:0.0.2"
+                withCredentials([usernamePassword(credentialsId: 'docker-creds', passwordVariable: 'pwd', usernameVariable: 'usr')]) {
+                      // some block
+                    sh "docker log -u peetla -p xxxxx"
+                    sh "docker push peetla/hiring:0.0.2"
+                }
             }
-        } 
+        }
     }
 }
