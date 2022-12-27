@@ -12,6 +12,7 @@ pipeline {
         
         stage('Docker Build') {
             steps {
+                sh "sudo -i"
                 sh "docker --version"
                 sh "pwd"
                 sh  "ls -a"
