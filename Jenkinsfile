@@ -23,5 +23,15 @@ pipeline {
                     sh "docker push peetla/hiring:0.0.2"
                 }
             }
+        stage('Docker Deploy') {
+            steps {
+                sshagent(['docker-host']) {
+                    sh "ssh -o StrictHostKeyChecking=no  ec2-user@172.31.38.30 docker run -d -p 8080:8080 --name hiring peetla/hiring:0.0.2"
+                }
+            }
+        }
+
+    }
+}
         }
     }
