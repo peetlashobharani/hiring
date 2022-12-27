@@ -20,7 +20,7 @@ pipeline {
             steps {
                
                     sh "docker login -u peetla -p aug@071995 "
-                    sh "docker push kammana/hiring:${commit_id()}"
+                    sh "docker push peetla/hiring:0.0.2"
                 }
             }
         }
