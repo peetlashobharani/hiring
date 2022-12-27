@@ -12,7 +12,9 @@ pipeline {
         
         stage('Docker Build') {
             steps {
-                sh "Docker build -t peetla/hiring:0.0.2"
+                sh "pwd"
+                sh  "ls -a"
+                sh "Docker build -t peetla/hiring:0.0.2 "
             }
         }
         stage('Docker Push') {
