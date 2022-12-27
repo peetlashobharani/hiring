@@ -15,7 +15,7 @@ pipeline {
                 sh "docker --version"
                 sh "pwd"
                 sh  "ls -a"
-                sh "docker build -t peetla/hiring:0.0.2 /var/lib/jenkins/workspace/docker-ci-cd"
+                sh "sudo docker build -t peetla/hiring:0.0.2 /var/lib/jenkins/workspace/docker-ci-cd"
             }
         }
         stage('Docker Push') {
