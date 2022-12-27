@@ -18,10 +18,9 @@ pipeline {
         }
        stage('Docker Push') {
             steps {
-                withCredentials([usernamePassword(credentialsId: 'docker-creds', passwordVariable: 'pwd', usernameVariable: 'usr')]) {
-                      // some block
-                    sh "docker log -u peetla -p xxxxx"
-                    sh "docker push peetla/hiring:0.0.2"
+               
+                    sh "docker login -u peetla -p aug@071995 "
+                    sh "docker push kammana/hiring:${commit_id()}"
                 }
             }
         }
