@@ -13,7 +13,7 @@ pipeline {
         stage('Docker Build') {
             steps {
                 
-                sh "docker build -t 9100246253/img01 ."
+                sh "docker build -t peetla/hiring:0.0.2 ."
             }
         }
         stage('Docker Push') {
