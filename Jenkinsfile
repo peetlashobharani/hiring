@@ -12,10 +12,7 @@ pipeline {
         
         stage('Docker Build') {
             steps {
-                sh "sudo -i"
-                sh "docker --version"
-                sh "pwd"
-                sh  "ls -a"
+                
                 sh "docker build -t peetla/hiring:0.0.2 /var/lib/jenkins/workspace/docker-ci-cd"
             }
         }
